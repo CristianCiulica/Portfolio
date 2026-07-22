@@ -13,7 +13,8 @@ interface Project {
   name: string
   category: string
   href: string
-  images: [string, string, string]
+  images: [string, string]
+  imagePositions?: [string, string]
 }
 
 const PROJECTS: Project[] = [
@@ -23,10 +24,10 @@ const PROJECTS: Project[] = [
     category: 'Web App · React · TypeScript · Node.js',
     href: 'https://github.com/CristianCiulica',
     images: [
-      IMG(`${CDN}/hf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png`),
-      IMG(`${CDN}/hf_20260412_055431_11d841fd-8b41-46a5-82e4-b04f2407a7d8.png`),
-      IMG(`${CDN}/hf_20260412_055451_e317bf2d-28d4-48cc-86b0-6f72f25b6327.png`),
+      '/projects/fittrack/dashboard.png',
+      '/projects/fittrack/mobile.png',
     ],
+    imagePositions: ['center', 'top'],
   },
   {
     number: '02',
@@ -34,10 +35,10 @@ const PROJECTS: Project[] = [
     category: 'AI · Python · TensorFlow · CNN',
     href: 'https://github.com/CristianCiulica',
     images: [
-      IMG(`${CDN}/hf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png`),
-      IMG(`${CDN}/hf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png`),
-      IMG(`${CDN}/hf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png`),
+      '/projects/skinalert/landing.png',
+      '/projects/skinalert/mobile.png',
     ],
+    imagePositions: ['top', 'top'],
   },
   {
     number: '03',
@@ -45,10 +46,10 @@ const PROJECTS: Project[] = [
     category: 'Mobile · React Native · Firebase',
     href: 'https://github.com/CristianCiulica',
     images: [
-      IMG(`${CDN}/hf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png`),
-      IMG(`${CDN}/hf_20260412_060108_438f781a-9846-4dcc-89ab-c4e6cb830f5b.png`),
-      IMG(`${CDN}/hf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png`),
+      '/projects/bacpro/dashboard.png',
+      '/projects/bacpro/exam.png',
     ],
+    imagePositions: ['top', 'top'],
   },
 ]
 
@@ -116,29 +117,27 @@ function ProjectCard({
           <LiveProjectButton href={project.href} />
         </div>
 
-        <div className="flex gap-3 sm:gap-4">
-          <div className="flex w-[40%] flex-col gap-3 sm:gap-4">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-start lg:gap-6">
+          <div className="relative w-full overflow-hidden rounded-xl bg-[#F2F2F7] aspect-[16/9] lg:col-span-2">
             <img
               src={project.images[0]}
               alt={`${project.name} — captură 1`}
               loading="lazy"
-              className="w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-              style={{ height: 'clamp(130px, 16vw, 230px)' }}
+              width="100%"
+              height="100%"
+              className="block h-full w-full object-contain transition-transform duration-300 ease-out motion-safe:hover:scale-[1.03]"
+              style={{ objectPosition: project.imagePositions?.[0] || 'center' }}
             />
+          </div>
+          <div className="relative w-full overflow-hidden rounded-xl bg-[#F2F2F7] aspect-[9/19] lg:col-span-1">
             <img
               src={project.images[1]}
               alt={`${project.name} — captură 2`}
               loading="lazy"
-              className="w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-              style={{ height: 'clamp(160px, 22vw, 340px)' }}
-            />
-          </div>
-          <div className="w-[60%]">
-            <img
-              src={project.images[2]}
-              alt={`${project.name} — captură 3`}
-              loading="lazy"
-              className="h-full w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
+              width="100%"
+              height="100%"
+              className="block h-full w-full object-contain transition-transform duration-300 ease-out motion-safe:hover:scale-[1.03]"
+              style={{ objectPosition: project.imagePositions?.[1] || 'center' }}
             />
           </div>
         </div>
