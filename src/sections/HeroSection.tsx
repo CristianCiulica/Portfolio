@@ -45,9 +45,9 @@ function TerminalCard() {
       style={{ boxShadow: '0 0 60px rgba(118, 33, 176, 0.25)' }}
     >
       <div className="flex items-center gap-2 border-b border-[#D7E2EA]/10 px-4 py-3">
-        <span className="h-3 w-3 rounded-full bg-[#B600A8]" />
-        <span className="h-3 w-3 rounded-full bg-[#7621B0]" />
-        <span className="h-3 w-3 rounded-full bg-[#BE4C00]" />
+        <span className="h-3 w-3 rounded-full bg-[#FF5F56]" />
+        <span className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
+        <span className="h-3 w-3 rounded-full bg-[#27C93F]" />
         <span className="ml-2 text-xs tracking-wider text-[#D7E2EA]/40">
           cristian@unitbv
         </span>
@@ -56,7 +56,7 @@ function TerminalCard() {
         <p className="text-[#D7E2EA]/60">
           <span className="text-[#B600A8]">$</span> whoami
         </p>
-        <p className="text-[#D7E2EA]">student informatică · full-stack & AI</p>
+        <p className="text-[#D7E2EA]">student informatică aplicată · full-stack & AI</p>
         <p className="text-[#D7E2EA]/60">
           <span className="text-[#B600A8]">$</span> ls proiecte/
         </p>
