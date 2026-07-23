@@ -105,18 +105,18 @@ function ProjectCard({
 
   return (
     <div
-      className="sticky flex h-[85vh] items-start justify-center"
+      className="flex items-start justify-center pb-10 sm:pb-0 sm:sticky sm:h-[85vh]"
       style={{ top: `calc(6rem + ${index * 28}px)` }}
     >
       <motion.div
         style={{ scale, transformOrigin: 'top center' }}
-        className="w-full rounded-[40px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
+        className="w-full rounded-3xl border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
       >
         <div className="mb-4 flex flex-wrap items-center justify-between gap-4 sm:mb-6 md:mb-8">
           <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
             <span
               className="hero-heading font-black leading-none"
-              style={{ fontSize: 'clamp(3rem, 8vw, 110px)' }}
+              style={{ fontSize: 'clamp(2.2rem, 8vw, 110px)' }}
             >
               {project.number}
             </span>
@@ -138,11 +138,8 @@ function ProjectCard({
           </div>
         </div>
 
-        <a
-          href={project.liveHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-start lg:gap-6 cursor-pointer"
+        <div
+          className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-start lg:gap-6"
         >
           <div className="flex flex-col gap-4 lg:gap-6 lg:col-span-2">
             <div className="relative w-full overflow-hidden rounded-xl bg-[#F2F2F7] aspect-[16/9]">
@@ -152,36 +149,36 @@ function ProjectCard({
                 loading="lazy"
                 width="100%"
                 height="100%"
-                className="block h-full w-full object-contain transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.03]"
+                className="block h-full w-full object-contain"
                 style={{ objectPosition: project.imagePositions?.[0] || 'center' }}
               />
             </div>
             {project.images[2] && (
-              <div className="relative w-full overflow-hidden rounded-xl bg-[#1c1c1e] aspect-[16/9]">
+              <div className="relative hidden w-full overflow-hidden rounded-xl bg-[#F2F2F7] aspect-[16/9] sm:block">
                 <img
                   src={project.images[2]}
                   alt={`${project.name} — captură 3`}
                   loading="lazy"
                   width="100%"
                   height="100%"
-                  className="block h-full w-full object-contain transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.03]"
+                  className="block h-full w-full object-contain"
                   style={{ objectPosition: project.imagePositions?.[2] || 'center' }}
                 />
               </div>
             )}
           </div>
-          <div className="relative w-full overflow-hidden rounded-xl bg-[#F2F2F7] aspect-[9/19] lg:col-span-1">
+          <div className="relative mx-auto w-3/5 overflow-hidden rounded-2xl bg-[#F2F2F7] aspect-[9/19] sm:w-1/2 sm:rounded-xl lg:w-full lg:col-span-1">
             <img
               src={project.images[1]}
               alt={`${project.name} — captură 2`}
               loading="lazy"
               width="100%"
               height="100%"
-              className="block h-full w-full object-contain transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.03]"
+              className="block h-full w-full object-contain"
               style={{ objectPosition: project.imagePositions?.[1] || 'center' }}
             />
           </div>
-        </a>
+        </div>
       </motion.div>
     </div>
   )
@@ -220,7 +217,7 @@ export default function ProjectsSection() {
         ))}
       </div>
 
-      <div className="mx-auto mt-48 max-w-5xl sm:mt-64 md:mt-[350px]">
+      <div className="mx-auto mt-16 max-w-5xl sm:mt-48 md:mt-[350px]">
         <FadeIn y={30}>
           <h3 className="mb-8 text-center text-xl font-medium uppercase tracking-widest text-[#D7E2EA] opacity-70 sm:text-2xl">
             Alte proiecte

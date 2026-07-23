@@ -94,9 +94,15 @@ export default function HeroSection() {
         </nav>
       </FadeIn>
 
+      <FadeIn delay={0.05} y={10}>
+        <p className="mt-4 text-center text-[10px] font-light uppercase tracking-widest text-[#D7E2EA]/40 sm:hidden">
+          Pentru o experiență completă, deschide pe desktop ✦
+        </p>
+      </FadeIn>
+
       <div className="overflow-hidden">
         <FadeIn delay={0.15} y={40}>
-          <h1 className="hero-heading mt-6 w-full whitespace-nowrap text-center text-[10.5vw] font-black uppercase leading-none tracking-tight sm:mt-4 sm:text-[10.8vw] md:-mt-5 md:text-[11vw] lg:text-[11.5vw]">
+          <h1 className="hero-heading mt-10 w-full whitespace-nowrap text-center text-[10.5vw] font-black uppercase leading-none tracking-tight sm:mt-4 sm:text-[10.8vw] md:-mt-5 md:text-[11vw] lg:text-[11.5vw]">
             Sunt Cristian
           </h1>
         </FadeIn>
