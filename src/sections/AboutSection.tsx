@@ -6,7 +6,7 @@ const BASE_URL =
   'https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7'
 
 const ABOUT_TEXT =
-  'Student în anul 3 la Informatică Aplicată în cadrul Universității Transilvania din Brașov (UNITBV). Construiesc aplicații full-stack, modele AI pentru dermatologie (SkinAlert), soluții mobile (BacPro) și platforme web interactive (FitTrack). Pasionat de algoritmi, rețele neuronale și dezvoltare software curată. Hai să construim ceva memorabil împreună!'
+  'Student în anul III la Informatică Aplicată in cadrul UNITBV, pasionat de dezvoltare web full-stack, algoritmi și inteligență artificială.'
 
 export default function AboutSection() {
   return (

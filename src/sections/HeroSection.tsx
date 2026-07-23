@@ -10,11 +10,12 @@ const NAV_LINKS = [
 ]
 
 const TECH_PILLS = [
-  { label: 'React & TypeScript', pos: 'left-[6%] top-[34%]', rot: '-rotate-6', delay: 0.7, dur: '4.6s' },
-  { label: 'Python & AI', pos: 'left-[17%] top-[52%]', rot: 'rotate-3', delay: 0.8, dur: '5.4s' },
-  { label: 'C++', pos: 'left-[7%] top-[70%]', rot: 'rotate-[8deg]', delay: 0.9, dur: '5s' },
-  { label: 'Node.js & Spring', pos: 'right-[5%] top-[34%]', rot: 'rotate-6', delay: 0.75, dur: '5.2s' },
-  { label: 'React Native', pos: 'right-[14%] top-[52%]', rot: '-rotate-3', delay: 0.85, dur: '4.8s' },
+  { label: 'React & TypeScript', pos: 'left-[5%] top-[30%]', rot: '-rotate-6', delay: 0.7, dur: '4.6s' },
+  { label: 'Angular', pos: 'left-[18%] top-[44%]', rot: 'rotate-6', delay: 0.65, dur: '4.8s' },
+  { label: 'Python & AI', pos: 'left-[6%] top-[58%]', rot: 'rotate-3', delay: 0.8, dur: '5.4s' },
+  { label: 'UI/UX Design', pos: 'left-[17%] top-[72%]', rot: 'rotate-[8deg]', delay: 0.9, dur: '5s' },
+  { label: 'Java & SpringBoot', pos: 'right-[5%] top-[34%]', rot: 'rotate-6', delay: 0.75, dur: '5.2s' },
+  { label: 'Firebase & PWA', pos: 'right-[14%] top-[52%]', rot: '-rotate-3', delay: 0.85, dur: '4.8s' },
   { label: 'Algorithms', pos: 'right-[4%] top-[70%]', rot: '-rotate-[6deg]', delay: 0.95, dur: '5.6s' },
 ]
 
@@ -56,7 +57,7 @@ function TerminalCard() {
         <p className="text-[#D7E2EA]/60">
           <span className="text-[#B600A8]">$</span> whoami
         </p>
-        <p className="text-[#D7E2EA]">student informatică aplicată · full-stack & AI</p>
+        <p className="text-[#D7E2EA]">student informatică aplicată · full stack web & AI</p>
         <p className="text-[#D7E2EA]/60">
           <span className="text-[#B600A8]">$</span> ls proiecte/
         </p>
@@ -64,7 +65,7 @@ function TerminalCard() {
         <p className="text-[#D7E2EA]/60">
           <span className="text-[#B600A8]">$</span> cat status.txt
         </p>
-        <p className="text-[#D7E2EA]">deschis pentru colaborări software</p>
+        <p className="text-[#D7E2EA]">deschis pentru internship-uri</p>
         <p className="text-[#D7E2EA]/60">
           <span className="text-[#B600A8]">$</span> ./construieste ceva_memorabil
         </p>
@@ -107,8 +108,7 @@ export default function HeroSection() {
             className="max-w-[160px] font-light uppercase leading-snug tracking-wide text-[#D7E2EA] sm:max-w-[220px] md:max-w-[260px]"
             style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)' }}
           >
-            Transform idei în software care funcționează — rapid, curat și bine
-            gândit
+            Transform provocări reale în soluții software utile și scalabile.
           </p>
         </FadeIn>
         <FadeIn delay={0.5} y={20}>

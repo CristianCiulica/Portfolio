@@ -12,17 +12,19 @@ interface Project {
   number: string
   name: string
   category: string
-  href: string
-  images: [string, string]
-  imagePositions?: [string, string]
+  liveHref: string
+  githubHref: string
+  images: string[]
+  imagePositions?: string[]
 }
 
 const PROJECTS: Project[] = [
   {
     number: '01',
     name: 'FitTrack',
-    category: 'Web App · React · TypeScript · Node.js',
-    href: 'https://github.com/CristianCiulica',
+    category: 'Web App · Angular · TypeScript · Firebase',
+    liveHref: 'https://fittrack-angular-7ca07.web.app/auth/login',
+    githubHref: 'https://github.com/CristianCiulica/FitTrack-Angular',
     images: [
       '/projects/fittrack/dashboard.png',
       '/projects/fittrack/mobile.png',
@@ -33,7 +35,8 @@ const PROJECTS: Project[] = [
     number: '02',
     name: 'SkinAlert',
     category: 'AI · Python · TensorFlow · CNN',
-    href: 'https://github.com/CristianCiulica',
+    liveHref: 'https://skin-alert.netlify.app/',
+    githubHref: 'https://github.com/CristianCiulica/SkinAlert',
     images: [
       '/projects/skinalert/landing.png',
       '/projects/skinalert/mobile.png',
@@ -43,29 +46,44 @@ const PROJECTS: Project[] = [
   {
     number: '03',
     name: 'BacPro',
-    category: 'Mobile · React Native · Firebase',
-    href: 'https://github.com/CristianCiulica',
+    category: 'Web App · Angular · TypeScript · Firebase',
+    liveHref: 'https://bacpro-ba190.web.app/login',
+    githubHref: 'https://github.com/CristianCiulica/BacPro-web',
     images: [
       '/projects/bacpro/dashboard.png',
       '/projects/bacpro/exam.png',
+      '/projects/bacpro/session.png',
     ],
-    imagePositions: ['top', 'top'],
+    imagePositions: ['top', 'top', 'center'],
   },
 ]
 
 const OTHER_PROJECTS = [
   {
+    num: '#1',
+    name: 'OctaCare — Krontech Challenge 2026 (Locul 7)',
+    role: 'Frontend Developer',
+    stack: 'Angular · TypeScript',
+    href: 'https://github.com/pterodactylstfw/krontech-2026-octacare',
+  },
+  {
+    num: '#2',
     name: 'Crypto Market Aggregator',
+    role: '',
     stack: 'Java · Spring Boot · Docker · AWS',
     href: 'https://github.com/CristianCiulica/DevOps-FinalProject',
   },
   {
+    num: '#3',
     name: '7 Wonders Duel — AI',
-    stack: 'C# · Game AI · Euristici',
+    role: '',
+    stack: 'Modern C++ · Game AI · Euristici',
     href: 'https://github.com/pterodactylstfw/7WondersDuel',
   },
   {
+    num: '#4',
     name: 'Regex → DFA Converter',
+    role: '',
     stack: 'C++ · Teoria automatelor',
     href: 'https://github.com/CristianCiulica/RegexToDFA',
   },
@@ -114,20 +132,43 @@ function ProjectCard({
               </span>
             </div>
           </div>
-          <LiveProjectButton href={project.href} />
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+            <LiveProjectButton href={project.liveHref} label="Vezi Live" />
+            <LiveProjectButton href={project.githubHref} label="Vezi pe GitHub" />
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-start lg:gap-6">
-          <div className="relative w-full overflow-hidden rounded-xl bg-[#F2F2F7] aspect-[16/9] lg:col-span-2">
-            <img
-              src={project.images[0]}
-              alt={`${project.name} — captură 1`}
-              loading="lazy"
-              width="100%"
-              height="100%"
-              className="block h-full w-full object-contain transition-transform duration-300 ease-out motion-safe:hover:scale-[1.03]"
-              style={{ objectPosition: project.imagePositions?.[0] || 'center' }}
-            />
+        <a
+          href={project.liveHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-start lg:gap-6 cursor-pointer"
+        >
+          <div className="flex flex-col gap-4 lg:gap-6 lg:col-span-2">
+            <div className="relative w-full overflow-hidden rounded-xl bg-[#F2F2F7] aspect-[16/9]">
+              <img
+                src={project.images[0]}
+                alt={`${project.name} — captură 1`}
+                loading="lazy"
+                width="100%"
+                height="100%"
+                className="block h-full w-full object-contain transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.03]"
+                style={{ objectPosition: project.imagePositions?.[0] || 'center' }}
+              />
+            </div>
+            {project.images[2] && (
+              <div className="relative w-full overflow-hidden rounded-xl bg-[#1c1c1e] aspect-[16/9]">
+                <img
+                  src={project.images[2]}
+                  alt={`${project.name} — captură 3`}
+                  loading="lazy"
+                  width="100%"
+                  height="100%"
+                  className="block h-full w-full object-contain transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.03]"
+                  style={{ objectPosition: project.imagePositions?.[2] || 'center' }}
+                />
+              </div>
+            )}
           </div>
           <div className="relative w-full overflow-hidden rounded-xl bg-[#F2F2F7] aspect-[9/19] lg:col-span-1">
             <img
@@ -136,11 +177,11 @@ function ProjectCard({
               loading="lazy"
               width="100%"
               height="100%"
-              className="block h-full w-full object-contain transition-transform duration-300 ease-out motion-safe:hover:scale-[1.03]"
+              className="block h-full w-full object-contain transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.03]"
               style={{ objectPosition: project.imagePositions?.[1] || 'center' }}
             />
           </div>
-        </div>
+        </a>
       </motion.div>
     </div>
   )
@@ -179,7 +220,7 @@ export default function ProjectsSection() {
         ))}
       </div>
 
-      <div className="mx-auto mt-24 max-w-5xl sm:mt-32">
+      <div className="mx-auto mt-48 max-w-5xl sm:mt-64 md:mt-[350px]">
         <FadeIn y={30}>
           <h3 className="mb-8 text-center text-xl font-medium uppercase tracking-widest text-[#D7E2EA] opacity-70 sm:text-2xl">
             Alte proiecte
@@ -191,15 +232,23 @@ export default function ProjectsSection() {
               href={p.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-wrap items-center justify-between gap-2 border-b border-[#D7E2EA]/15 py-6 transition-colors duration-200 hover:bg-[#D7E2EA]/5 sm:py-8"
+              className="group flex flex-col gap-3 border-b border-[#D7E2EA]/15 py-6 transition-colors duration-200 hover:bg-[#D7E2EA]/5 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:py-8"
               style={{ borderTop: i === 0 ? '1px solid rgba(215, 226, 234, 0.15)' : undefined }}
             >
-              <span
-                className="font-medium uppercase text-[#D7E2EA]"
-                style={{ fontSize: 'clamp(1.1rem, 2.4vw, 1.8rem)' }}
-              >
-                {p.name}
-              </span>
+              <div className="flex flex-col gap-1 sm:gap-2">
+                <span
+                  className="font-medium uppercase text-[#D7E2EA]"
+                  style={{ fontSize: 'clamp(1.1rem, 2.4vw, 1.8rem)' }}
+                >
+                  <span className="mr-3 font-mono opacity-50">{p.num}</span>
+                  {p.name}
+                </span>
+                {p.role && (
+                  <span className="text-xs font-light uppercase tracking-widest text-[#D7E2EA] opacity-60 sm:text-sm">
+                    {p.role}
+                  </span>
+                )}
+              </div>
               <span className="text-sm font-light uppercase tracking-widest text-[#D7E2EA] opacity-50 transition-opacity duration-200 group-hover:opacity-90 sm:text-base">
                 {p.stack} ↗
               </span>

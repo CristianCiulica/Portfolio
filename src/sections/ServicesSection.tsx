@@ -15,21 +15,15 @@ const SKILLS = [
   },
   {
     number: '03',
-    name: 'C++ & Compilatoare',
+    name: 'UI/UX & Web Design',
     description:
-      'Nivel avansat: algoritmi, structuri de date și teoria automatelor — inclusiv un compilator de expresii regulate în automate finite deterministe.',
+      'Figma, Design Systems și micro-animații — atenție la detalii vizuale, tipografie modernă, layout-uri responsive și experiențe de utilizare fluide și intuitive.',
   },
   {
     number: '04',
-    name: 'Mobile',
-    description:
-      'React Native, TypeScript și Firebase — BacPro, un companion de studiu pentru Bacalaureat cu subiecte din anii trecuți, rezolvări și sfaturi de examen.',
-  },
-  {
-    number: '05',
     name: 'DevOps & Cloud',
     description:
-      'Docker, AWS EC2 și pipeline-uri CI/CD — deploy de aplicații full-stack reale în cloud, de la primul commit până în producție.',
+      'Docker, Firebase și AWS — containerizare și deployment automatizat pentru aplicații web.',
   },
 ]
 
