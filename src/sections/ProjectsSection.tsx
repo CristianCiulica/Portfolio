@@ -99,8 +99,8 @@ function ProjectCard({
 
   return (
     <div
-      className="flex items-start justify-center pb-10 sm:pb-0 sm:sticky sm:h-[85vh]"
-      style={{ top: `calc(6rem + ${index * 28}px)` }}
+      className="sticky flex h-[100svh] items-start justify-center top-[calc(1.25rem+var(--stack-i)*10px)] sm:h-[85vh] sm:top-[calc(6rem+var(--stack-i)*28px)]"
+      style={{ '--stack-i': index } as React.CSSProperties}
     >
       <motion.div
         style={{ scale, transformOrigin: 'top center' }}
@@ -164,7 +164,7 @@ function ProjectCard({
               </div>
             )}
           </div>
-          <div className="relative mx-auto w-3/5 overflow-hidden rounded-2xl bg-[#F2F2F7] aspect-[9/19] sm:w-1/2 sm:rounded-xl lg:w-full lg:col-span-1">
+          <div className="relative mx-auto w-[42%] overflow-hidden rounded-2xl bg-[#F2F2F7] aspect-[9/19] sm:w-1/2 sm:rounded-xl lg:w-full lg:col-span-1">
             <img
               src={project.images[1]}
               alt={`${project.name} — ${t.projects.captionAlt} 2`}

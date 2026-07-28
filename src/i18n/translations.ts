@@ -9,7 +9,7 @@ export const translations = {
       contact: 'Contact',
     },
     hero: {
-      mobileHint: 'Pentru o experiență completă, deschide pe desktop ✦',
+      mobileHint: 'Pentru o experiență completă, deschide pe desktop',
       heading: 'Sunt Cristian',
       tagline: 'Transform provocări reale în soluții software utile și scalabile.',
       terminal: {
@@ -112,7 +112,7 @@ export const translations = {
       contact: 'Contact',
     },
     hero: {
-      mobileHint: 'For the full experience, open on desktop ✦',
+      mobileHint: 'For the full experience, open on desktop',
       heading: "I'm Cristian",
       tagline: 'I turn real-world challenges into useful, scalable software.',
       terminal: {
