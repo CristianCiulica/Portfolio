@@ -49,6 +49,25 @@ export const translations = {
         },
       ],
     },
+    certificates: {
+      heading: 'Diplome',
+      subtitle: 'Cursuri absolvite și competiții — dovada, nu doar lista.',
+      viewFull: 'Vezi diploma',
+      items: {
+        pythonMl: {
+          title: 'AI with Python — Machine Learning',
+          issuer: 'Udemy',
+        },
+        cpp: {
+          title: 'Coding for Everyone: C and C++',
+          issuer: 'UC Santa Cruz · Coursera',
+        },
+        googleAi: {
+          title: 'Google AI Essentials',
+          issuer: 'Google · Coursera',
+        },
+      },
+    },
     projects: {
       heading: 'Proiecte',
       categories: {
@@ -151,6 +170,25 @@ export const translations = {
             'Docker, Firebase and AWS — containerization and automated deployment for web applications.',
         },
       ],
+    },
+    certificates: {
+      heading: 'Diplomas',
+      subtitle: 'Completed courses and competitions — the proof, not just the list.',
+      viewFull: 'View diploma',
+      items: {
+        pythonMl: {
+          title: 'AI with Python — Machine Learning',
+          issuer: 'Udemy',
+        },
+        cpp: {
+          title: 'Coding for Everyone: C and C++',
+          issuer: 'UC Santa Cruz · Coursera',
+        },
+        googleAi: {
+          title: 'Google AI Essentials',
+          issuer: 'Google · Coursera',
+        },
+      },
     },
     projects: {
       heading: 'Projects',

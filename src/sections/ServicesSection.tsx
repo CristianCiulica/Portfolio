@@ -11,7 +11,7 @@ export default function ServicesSection() {
   return (
     <section
       id="skills"
-      className="rounded-t-[40px] bg-white px-5 py-20 sm:rounded-t-[50px] sm:px-8 sm:py-24 md:rounded-t-[60px] md:px-10 md:py-32"
+      className="rounded-t-[40px] bg-white px-5 pb-16 pt-20 sm:rounded-t-[50px] sm:px-8 sm:pb-20 sm:pt-24 md:rounded-t-[60px] md:px-10 md:pb-24 md:pt-32"
     >
       <FadeIn y={40}>
         <h2
