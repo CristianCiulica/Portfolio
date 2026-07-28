@@ -1,6 +1,8 @@
 import { FileDown, Trophy, Award } from 'lucide-react'
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
+import { useLanguage } from '../i18n/LanguageContext'
+import { CV_HREF } from '../components/DownloadCvButton'
 
 const brandIconProps = {
   viewBox: '0 0 24 24',
@@ -52,16 +54,11 @@ const SOCIALS = [
     href: 'https://instagram.com/cristian.ciulica',
     Icon: InstagramIcon,
   },
-  { label: 'Descarcă CV', href: '/CV_Cristian_Ciulica.pdf', Icon: FileDown },
-]
-
-const CERTS = [
-  'AI with Python — Machine Learning · Udemy 2026',
-  'Coding for Everyone: C and C++ · UC Santa Cruz / Coursera 2024',
-  'Google AI Essentials · Google / Coursera 2024',
 ]
 
 export default function ContactSection() {
+  const { t } = useLanguage()
+
   return (
     <footer
       id="contact"
@@ -72,7 +69,7 @@ export default function ContactSection() {
           className="hero-heading text-center font-black uppercase leading-none tracking-tight"
           style={{ fontSize: 'clamp(2.5rem, 10vw, 140px)' }}
         >
-          Hai să vorbim
+          {t.contact.heading}
         </h2>
       </FadeIn>
 
@@ -81,13 +78,12 @@ export default function ContactSection() {
           className="max-w-[520px] text-center font-light uppercase leading-snug tracking-wide text-[#D7E2EA]"
           style={{ fontSize: 'clamp(0.8rem, 1.4vw, 1.2rem)' }}
         >
-          Deschis pentru internship-uri, colaborări și proiecte care merită
-          construite.
+          {t.contact.tagline}
         </p>
       </FadeIn>
 
       <FadeIn delay={0.3} y={20}>
-        <ContactButton label="Scrie-mi un email" />
+        <ContactButton label={t.contact.emailCta} />
       </FadeIn>
 
       <FadeIn delay={0.4} y={20}>
@@ -104,6 +100,14 @@ export default function ContactSection() {
               {label}
             </a>
           ))}
+          <a
+            href={CV_HREF}
+            download
+            className="flex items-center gap-2 rounded-full border border-[#D7E2EA]/40 px-5 py-2.5 text-xs font-medium uppercase tracking-widest text-[#D7E2EA] transition-colors duration-200 hover:bg-[#D7E2EA]/10 sm:text-sm"
+          >
+            <FileDown size={16} />
+            {t.contact.downloadCv}
+          </a>
         </div>
       </FadeIn>
 
@@ -111,9 +115,9 @@ export default function ContactSection() {
         <div className="flex max-w-3xl flex-col items-center gap-3 text-center">
           <p className="flex items-center gap-2 text-sm font-medium uppercase tracking-wider text-[#D7E2EA] sm:text-base">
             <Trophy size={16} className="shrink-0" />
-            Locul 7 — Krontech Challenge 2026
+            {t.contact.award}
           </p>
-          {CERTS.map((cert) => (
+          {t.contact.certs.map((cert) => (
             <p
               key={cert}
               className="flex items-center gap-2 text-xs font-light uppercase tracking-wider text-[#D7E2EA] opacity-50 sm:text-sm"
@@ -126,7 +130,7 @@ export default function ContactSection() {
       </FadeIn>
 
       <p className="mt-8 text-xs font-light uppercase tracking-widest text-[#D7E2EA] opacity-40">
-        © 2026 Cristian Ciulică · Brașov, România
+        {t.contact.copyright}
       </p>
     </footer>
   )

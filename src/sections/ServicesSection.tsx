@@ -1,33 +1,13 @@
 import FadeIn from '../components/FadeIn'
-
-const SKILLS = [
-  {
-    number: '01',
-    name: 'AI & Machine Learning',
-    description:
-      'Python, TensorFlow și rețele neuronale convoluționale — de la screening foto al pielii (SkinAlert) până la adversari AI pentru jocuri de strategie.',
-  },
-  {
-    number: '02',
-    name: 'Full-Stack Web',
-    description:
-      'React, TypeScript, Node.js, Angular și Spring Boot — aplicații web complete, de la tracking de antrenamente până la dashboard-uri crypto în timp real.',
-  },
-  {
-    number: '03',
-    name: 'UI/UX & Web Design',
-    description:
-      'Figma, Design Systems și micro-animații — atenție la detalii vizuale, tipografie modernă, layout-uri responsive și experiențe de utilizare fluide și intuitive.',
-  },
-  {
-    number: '04',
-    name: 'DevOps & Cloud',
-    description:
-      'Docker, Firebase și AWS — containerizare și deployment automatizat pentru aplicații web.',
-  },
-]
+import { useLanguage } from '../i18n/LanguageContext'
 
 export default function ServicesSection() {
+  const { t } = useLanguage()
+  const skills = t.skills.items.map((item, i) => ({
+    ...item,
+    number: String(i + 1).padStart(2, '0'),
+  }))
+
   return (
     <section
       id="skills"
@@ -38,12 +18,12 @@ export default function ServicesSection() {
           className="mb-16 text-center font-black uppercase leading-none tracking-tight text-[#0C0C0C] sm:mb-20 md:mb-28"
           style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
         >
-          Skills
+          {t.skills.heading}
         </h2>
       </FadeIn>
 
       <div className="mx-auto max-w-5xl">
-        {SKILLS.map((skill, i) => (
+        {skills.map((skill, i) => (
           <FadeIn key={skill.number} delay={i * 0.1}>
             <div
               className="flex items-start gap-6 py-8 sm:gap-10 sm:py-10 md:gap-14 md:py-12"

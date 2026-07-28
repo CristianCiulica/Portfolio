@@ -1,13 +1,17 @@
 import FadeIn from '../components/FadeIn'
 import Magnet from '../components/Magnet'
 import ContactButton from '../components/ContactButton'
+import DownloadCvButton from '../components/DownloadCvButton'
+import LanguageToggle from '../components/LanguageToggle'
+import { useLanguage } from '../i18n/LanguageContext'
+import type { Translation } from '../i18n/translations'
 
 const NAV_LINKS = [
-  { label: 'Despre', href: '#despre' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Proiecte', href: '#proiecte' },
-  { label: 'Contact', href: '#contact' },
-]
+  { key: 'about', href: '#despre' },
+  { key: 'skills', href: '#skills' },
+  { key: 'projects', href: '#proiecte' },
+  { key: 'contact', href: '#contact' },
+] as const
 
 const TECH_PILLS = [
   { label: 'React & TypeScript', pos: 'left-[5%] top-[30%]', rot: '-rotate-6', delay: 0.7, dur: '4.6s' },
@@ -39,7 +43,7 @@ function TechPills() {
   )
 }
 
-function TerminalCard() {
+function TerminalCard({ t }: { t: Translation }) {
   return (
     <div
       className="w-full rounded-2xl border border-[#D7E2EA]/20 bg-[#111214]/90 font-mono text-left shadow-2xl backdrop-blur-sm"
@@ -57,20 +61,21 @@ function TerminalCard() {
         <p className="text-[#D7E2EA]/60">
           <span className="text-[#B600A8]">$</span> whoami
         </p>
-        <p className="text-[#D7E2EA]">student informatică aplicată · full stack web & AI</p>
+        <p className="text-[#D7E2EA]">{t.hero.terminal.whoami}</p>
         <p className="text-[#D7E2EA]/60">
-          <span className="text-[#B600A8]">$</span> ls proiecte/
+          <span className="text-[#B600A8]">$</span> {t.hero.terminal.lsCmd}
         </p>
         <p className="text-[#D7E2EA]">fittrack · skinalert · bacpro</p>
         <p className="text-[#D7E2EA]/60">
           <span className="text-[#B600A8]">$</span> cat status.txt
         </p>
-        <p className="text-[#D7E2EA]">deschis pentru internship-uri</p>
+        <p className="text-[#D7E2EA]">{t.hero.terminal.status}</p>
         <p className="text-[#D7E2EA]/60">
-          <span className="text-[#B600A8]">$</span> ./construieste ceva_memorabil
+          <span className="text-[#B600A8]">$</span> {t.hero.terminal.buildCmd}
         </p>
         <p className="text-[#D7E2EA]">
-          rulează…<span className="terminal-cursor ml-1 inline-block h-4 w-2 translate-y-0.5 bg-[#D7E2EA]" />
+          {t.hero.terminal.running}
+          <span className="terminal-cursor ml-1 inline-block h-4 w-2 translate-y-0.5 bg-[#D7E2EA]" />
         </p>
       </div>
     </div>
@@ -78,32 +83,35 @@ function TerminalCard() {
 }
 
 export default function HeroSection() {
+  const { t } = useLanguage()
+
   return (
     <section className="relative flex h-screen flex-col" style={{ overflowX: 'clip' }}>
       <FadeIn delay={0} y={-20}>
-        <nav className="flex justify-between px-6 pt-6 md:px-10 md:pt-8">
+        <nav className="flex items-center justify-between gap-2 px-6 pt-6 sm:gap-4 md:px-10 md:pt-8">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
               className="text-sm font-medium uppercase tracking-wider text-[#D7E2EA] transition-opacity duration-200 hover:opacity-70 md:text-lg lg:text-[1.4rem]"
             >
-              {link.label}
+              {t.nav[link.key]}
             </a>
           ))}
+          <LanguageToggle />
         </nav>
       </FadeIn>
 
       <FadeIn delay={0.05} y={10}>
         <p className="mt-4 text-center text-[10px] font-light uppercase tracking-widest text-[#D7E2EA]/40 sm:hidden">
-          Pentru o experiență completă, deschide pe desktop ✦
+          {t.hero.mobileHint}
         </p>
       </FadeIn>
 
       <div className="overflow-hidden">
         <FadeIn delay={0.15} y={40}>
           <h1 className="hero-heading mt-10 w-full whitespace-nowrap text-center text-[10.5vw] font-black uppercase leading-none tracking-tight sm:mt-4 sm:text-[10.8vw] md:-mt-5 md:text-[11vw] lg:text-[11.5vw]">
-            Sunt Cristian
+            {t.hero.heading}
           </h1>
         </FadeIn>
       </div>
@@ -114,11 +122,14 @@ export default function HeroSection() {
             className="max-w-[160px] font-light uppercase leading-snug tracking-wide text-[#D7E2EA] sm:max-w-[220px] md:max-w-[260px]"
             style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)' }}
           >
-            Transform provocări reale în soluții software utile și scalabile.
+            {t.hero.tagline}
           </p>
         </FadeIn>
         <FadeIn delay={0.5} y={20}>
-          <ContactButton />
+          <div className="flex flex-col items-end gap-3">
+            <ContactButton />
+            <DownloadCvButton />
+          </div>
         </FadeIn>
       </div>
 
@@ -141,7 +152,7 @@ export default function HeroSection() {
             activeTransition="transform 0.3s ease-out"
             inactiveTransition="transform 0.6s ease-in-out"
           >
-            <TerminalCard />
+            <TerminalCard t={t} />
           </Magnet>
         </FadeIn>
       </div>

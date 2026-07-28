@@ -1,14 +1,14 @@
 import FadeIn from '../components/FadeIn'
 import AnimatedText from '../components/AnimatedText'
 import ContactButton from '../components/ContactButton'
+import { useLanguage } from '../i18n/LanguageContext'
 
 const BASE_URL =
   'https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7'
 
-const ABOUT_TEXT =
-  'Student în anul III la Informatică Aplicată in cadrul UNITBV, pasionat de dezvoltare web full-stack, algoritmi și inteligență artificială.'
-
 export default function AboutSection() {
+  const { lang, t } = useLanguage()
+
   return (
     <section
       id="despre"
@@ -40,12 +40,13 @@ export default function AboutSection() {
           className="hero-heading text-center font-black uppercase leading-none tracking-tight"
           style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
         >
-          Despre mine
+          {t.about.heading}
         </h2>
       </FadeIn>
 
       <AnimatedText
-        text={ABOUT_TEXT}
+        key={lang}
+        text={t.about.text}
         className="max-w-[560px] text-center font-medium leading-relaxed text-[#D7E2EA]"
         style={{ fontSize: 'clamp(1rem, 2vw, 1.35rem)' }}
       />

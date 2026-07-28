@@ -2,16 +2,16 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform, type MotionValue } from 'framer-motion'
 import FadeIn from '../components/FadeIn'
 import LiveProjectButton from '../components/LiveProjectButton'
+import { useLanguage } from '../i18n/LanguageContext'
+import type { Translation } from '../i18n/translations'
 
-const IMG = (url: string) =>
-  `https://images.higgs.ai/?default=1&output=webp&url=${encodeURIComponent(url)}&w=1280&q=85`
-
-const CDN = 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P'
+type CategoryKey = keyof Translation['projects']['categories']
+type OtherKey = keyof Translation['projects']['other']
 
 interface Project {
   number: string
   name: string
-  category: string
+  categoryKey: CategoryKey
   liveHref: string
   githubHref: string
   images: string[]
@@ -22,7 +22,7 @@ const PROJECTS: Project[] = [
   {
     number: '01',
     name: 'FitTrack',
-    category: 'Web App · Angular · TypeScript · Firebase',
+    categoryKey: 'fittrack',
     liveHref: 'https://fittrack-angular-7ca07.web.app/auth/login',
     githubHref: 'https://github.com/CristianCiulica/FitTrack-Angular',
     images: [
@@ -34,7 +34,7 @@ const PROJECTS: Project[] = [
   {
     number: '02',
     name: 'SkinAlert',
-    category: 'AI · Python · TensorFlow · CNN',
+    categoryKey: 'skinalert',
     liveHref: 'https://skin-alert.netlify.app/',
     githubHref: 'https://github.com/CristianCiulica/SkinAlert',
     images: [
@@ -46,7 +46,7 @@ const PROJECTS: Project[] = [
   {
     number: '03',
     name: 'BacPro',
-    category: 'Web App · Angular · TypeScript · Firebase',
+    categoryKey: 'bacpro',
     liveHref: 'https://bacpro-ba190.web.app/login',
     githubHref: 'https://github.com/CristianCiulica/BacPro-web',
     images: [
@@ -58,33 +58,25 @@ const PROJECTS: Project[] = [
   },
 ]
 
-const OTHER_PROJECTS = [
+const OTHER_PROJECTS: { num: string; key: OtherKey; href: string }[] = [
   {
     num: '#1',
-    name: 'OctaCare — Krontech Challenge 2026 (Locul 7)',
-    role: 'Frontend Developer',
-    stack: 'Angular · TypeScript',
+    key: 'octacare',
     href: 'https://github.com/pterodactylstfw/krontech-2026-octacare',
   },
   {
     num: '#2',
-    name: 'Crypto Market Aggregator',
-    role: '',
-    stack: 'Java · Spring Boot · Docker · AWS',
+    key: 'crypto',
     href: 'https://github.com/CristianCiulica/DevOps-FinalProject',
   },
   {
     num: '#3',
-    name: '7 Wonders Duel — AI',
-    role: '',
-    stack: 'Modern C++ · Game AI · Euristici',
+    key: 'sevenWonders',
     href: 'https://github.com/pterodactylstfw/7WondersDuel',
   },
   {
     num: '#4',
-    name: 'Regex → DFA Converter',
-    role: '',
-    stack: 'C++ · Teoria automatelor',
+    key: 'regex',
     href: 'https://github.com/CristianCiulica/RegexToDFA',
   },
 ]
@@ -94,11 +86,13 @@ function ProjectCard({
   index,
   total,
   progress,
+  t,
 }: {
   project: Project
   index: number
   total: number
   progress: MotionValue<number>
+  t: Translation
 }) {
   const targetScale = 1 - (total - 1 - index) * 0.03
   const scale = useTransform(progress, [index / total, 1], [1, targetScale])
@@ -122,7 +116,7 @@ function ProjectCard({
             </span>
             <div className="flex flex-col">
               <span className="text-xs font-light uppercase tracking-widest text-[#D7E2EA] opacity-60 sm:text-sm">
-                {project.category}
+                {t.projects.categories[project.categoryKey]}
               </span>
               <span
                 className="font-medium uppercase text-[#D7E2EA]"
@@ -133,8 +127,11 @@ function ProjectCard({
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-            <LiveProjectButton href={project.liveHref} label="Vezi Live" />
-            <LiveProjectButton href={project.githubHref} label="Vezi pe GitHub" />
+            <LiveProjectButton href={project.liveHref} label={t.projects.viewLive} />
+            <LiveProjectButton
+              href={project.githubHref}
+              label={t.projects.viewOnGithub}
+            />
           </div>
         </div>
 
@@ -145,7 +142,7 @@ function ProjectCard({
             <div className="relative w-full overflow-hidden rounded-xl bg-[#F2F2F7] aspect-[16/9]">
               <img
                 src={project.images[0]}
-                alt={`${project.name} — captură 1`}
+                alt={`${project.name} — ${t.projects.captionAlt} 1`}
                 loading="lazy"
                 width="100%"
                 height="100%"
@@ -157,7 +154,7 @@ function ProjectCard({
               <div className="relative hidden w-full overflow-hidden rounded-xl bg-[#F2F2F7] aspect-[16/9] sm:block">
                 <img
                   src={project.images[2]}
-                  alt={`${project.name} — captură 3`}
+                  alt={`${project.name} — ${t.projects.captionAlt} 3`}
                   loading="lazy"
                   width="100%"
                   height="100%"
@@ -170,7 +167,7 @@ function ProjectCard({
           <div className="relative mx-auto w-3/5 overflow-hidden rounded-2xl bg-[#F2F2F7] aspect-[9/19] sm:w-1/2 sm:rounded-xl lg:w-full lg:col-span-1">
             <img
               src={project.images[1]}
-              alt={`${project.name} — captură 2`}
+              alt={`${project.name} — ${t.projects.captionAlt} 2`}
               loading="lazy"
               width="100%"
               height="100%"
@@ -185,6 +182,7 @@ function ProjectCard({
 }
 
 export default function ProjectsSection() {
+  const { t } = useLanguage()
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -201,7 +199,7 @@ export default function ProjectsSection() {
           className="hero-heading mb-10 text-center font-black uppercase leading-none tracking-tight sm:mb-14 md:mb-20"
           style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
         >
-          Proiecte
+          {t.projects.heading}
         </h2>
       </FadeIn>
 
@@ -213,6 +211,7 @@ export default function ProjectsSection() {
             index={i}
             total={PROJECTS.length}
             progress={scrollYProgress}
+            t={t}
           />
         ))}
       </div>
@@ -220,11 +219,13 @@ export default function ProjectsSection() {
       <div className="mx-auto mt-16 max-w-5xl sm:mt-48 md:mt-[350px]">
         <FadeIn y={30}>
           <h3 className="mb-8 text-center text-xl font-medium uppercase tracking-widest text-[#D7E2EA] opacity-70 sm:text-2xl">
-            Alte proiecte
+            {t.projects.otherHeading}
           </h3>
         </FadeIn>
-        {OTHER_PROJECTS.map((p, i) => (
-          <FadeIn key={p.name} delay={i * 0.1}>
+        {OTHER_PROJECTS.map((p, i) => {
+          const info = t.projects.other[p.key]
+          return (
+          <FadeIn key={p.key} delay={i * 0.1}>
             <a
               href={p.href}
               target="_blank"
@@ -238,20 +239,21 @@ export default function ProjectsSection() {
                   style={{ fontSize: 'clamp(1.1rem, 2.4vw, 1.8rem)' }}
                 >
                   <span className="mr-3 font-mono opacity-50">{p.num}</span>
-                  {p.name}
+                  {info.name}
                 </span>
-                {p.role && (
+                {info.role && (
                   <span className="text-xs font-light uppercase tracking-widest text-[#D7E2EA] opacity-60 sm:text-sm">
-                    {p.role}
+                    {info.role}
                   </span>
                 )}
               </div>
               <span className="text-sm font-light uppercase tracking-widest text-[#D7E2EA] opacity-50 transition-opacity duration-200 group-hover:opacity-90 sm:text-base">
-                {p.stack} ↗
+                {info.stack} ↗
               </span>
             </a>
           </FadeIn>
-        ))}
+          )
+        })}
       </div>
     </section>
   )
