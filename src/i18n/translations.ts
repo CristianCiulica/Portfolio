@@ -107,12 +107,6 @@ export const translations = {
         'Deschis pentru internship-uri, colaborări și proiecte care merită construite.',
       emailCta: 'Scrie-mi un email',
       downloadCv: 'Descarcă CV',
-      award: 'Locul 7 din 40 de echipe — Krontech Challenge 2026',
-      certs: [
-        'AI with Python — Machine Learning · Udemy 2026',
-        'Coding for Everyone: C and C++ · UC Santa Cruz / Coursera 2024',
-        'Google AI Essentials · Google / Coursera 2024',
-      ],
       copyright: '© 2026 Cristian Ciulică · Brașov, România',
     },
     common: {
@@ -227,12 +221,6 @@ export const translations = {
       tagline: 'Open to internships, collaborations and projects worth building.',
       emailCta: 'Send me an email',
       downloadCv: 'Download CV',
-      award: '7th of 40 teams — Krontech Challenge 2026',
-      certs: [
-        'AI with Python — Machine Learning · Udemy 2026',
-        'Coding for Everyone: C and C++ · UC Santa Cruz / Coursera 2024',
-        'Google AI Essentials · Google / Coursera 2024',
-      ],
       copyright: '© 2026 Cristian Ciulică · Brașov, Romania',
     },
     common: {

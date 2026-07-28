@@ -1,4 +1,4 @@
-import { FileDown, Trophy, Award } from 'lucide-react'
+import { FileDown } from 'lucide-react'
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
 import { useLanguage } from '../i18n/LanguageContext'
@@ -108,24 +108,6 @@ export default function ContactSection() {
             <FileDown size={16} />
             {t.contact.downloadCv}
           </a>
-        </div>
-      </FadeIn>
-
-      <FadeIn delay={0.5} y={20}>
-        <div className="flex max-w-3xl flex-col items-center gap-3 text-center">
-          <p className="flex items-center gap-2 text-sm font-medium uppercase tracking-wider text-[#D7E2EA] sm:text-base">
-            <Trophy size={16} className="shrink-0" />
-            {t.contact.award}
-          </p>
-          {t.contact.certs.map((cert) => (
-            <p
-              key={cert}
-              className="flex items-center gap-2 text-xs font-light uppercase tracking-wider text-[#D7E2EA] opacity-50 sm:text-sm"
-            >
-              <Award size={14} className="shrink-0" />
-              {cert}
-            </p>
-          ))}
         </div>
       </FadeIn>
 
