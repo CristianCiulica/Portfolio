@@ -51,7 +51,6 @@ export const translations = {
     },
     certificates: {
       heading: 'Diplome',
-      subtitle: 'Cursuri absolvite și competiții — dovada, nu doar lista.',
       viewFull: 'Vezi diploma',
       items: {
         pythonMl: {
@@ -78,7 +77,7 @@ export const translations = {
       otherHeading: 'Alte proiecte',
       other: {
         octacare: {
-          name: 'OctaCare — Krontech Challenge 2026 (Locul 7)',
+          name: 'OctaCare — Krontech Challenge 2026 (locul 7 din 40)',
           role: 'Frontend Developer',
           stack: 'Angular · TypeScript',
         },
@@ -108,7 +107,7 @@ export const translations = {
         'Deschis pentru internship-uri, colaborări și proiecte care merită construite.',
       emailCta: 'Scrie-mi un email',
       downloadCv: 'Descarcă CV',
-      award: 'Locul 7 — Krontech Challenge 2026',
+      award: 'Locul 7 din 40 de echipe — Krontech Challenge 2026',
       certs: [
         'AI with Python — Machine Learning · Udemy 2026',
         'Coding for Everyone: C and C++ · UC Santa Cruz / Coursera 2024',
@@ -173,7 +172,6 @@ export const translations = {
     },
     certificates: {
       heading: 'Diplomas',
-      subtitle: 'Completed courses and competitions — the proof, not just the list.',
       viewFull: 'View diploma',
       items: {
         pythonMl: {
@@ -200,7 +198,7 @@ export const translations = {
       otherHeading: 'Other projects',
       other: {
         octacare: {
-          name: 'OctaCare — Krontech Challenge 2026 (7th place)',
+          name: 'OctaCare — Krontech Challenge 2026 (7th of 40)',
           role: 'Frontend Developer',
           stack: 'Angular · TypeScript',
         },
@@ -229,7 +227,7 @@ export const translations = {
       tagline: 'Open to internships, collaborations and projects worth building.',
       emailCta: 'Send me an email',
       downloadCv: 'Download CV',
-      award: '7th place — Krontech Challenge 2026',
+      award: '7th of 40 teams — Krontech Challenge 2026',
       certs: [
         'AI with Python — Machine Learning · Udemy 2026',
         'Coding for Everyone: C and C++ · UC Santa Cruz / Coursera 2024',

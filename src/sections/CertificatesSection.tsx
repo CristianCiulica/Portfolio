@@ -92,20 +92,11 @@ export default function CertificatesSection() {
     <section id="diplome" className="bg-white px-5 pb-24 pt-8 sm:px-8 sm:pb-32 md:px-10">
       <FadeIn y={40}>
         <h2
-          className="text-center font-black uppercase leading-none tracking-tight text-[#0C0C0C]"
+          className="mb-14 text-center font-black uppercase leading-none tracking-tight text-[#0C0C0C] sm:mb-20"
           style={{ fontSize: 'clamp(2.5rem, 10vw, 130px)' }}
         >
           {t.certificates.heading}
         </h2>
-      </FadeIn>
-
-      <FadeIn delay={0.1} y={20}>
-        <p
-          className="mx-auto mb-14 mt-5 max-w-xl text-center font-light leading-relaxed text-[#0C0C0C] opacity-60 sm:mb-20"
-          style={{ fontSize: 'clamp(0.85rem, 1.6vw, 1.15rem)' }}
-        >
-          {t.certificates.subtitle}
-        </p>
       </FadeIn>
 
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:gap-10 lg:grid-cols-3 lg:gap-8">
