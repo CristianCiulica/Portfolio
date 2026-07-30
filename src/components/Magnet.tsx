@@ -21,9 +21,28 @@ export default function Magnet({
   const ref = useRef<HTMLDivElement>(null)
   const [active, setActive] = useState(false)
   const [offset, setOffset] = useState({ x: 0, y: 0 })
+  // Touch devices emit synthetic mouse events on tap, which would drag the
+  // card around. Only follow a real pointer.
+  const [pointerFine, setPointerFine] = useState(false)
 
   useEffect(() => {
-    const handleMove = (e: MouseEvent) => {
+    const mq = window.matchMedia('(hover: hover) and (pointer: fine)')
+    const sync = () => setPointerFine(mq.matches)
+    sync()
+    mq.addEventListener('change', sync)
+    return () => mq.removeEventListener('change', sync)
+  }, [])
+
+  useEffect(() => {
+    if (!pointerFine) {
+      setActive(false)
+      setOffset({ x: 0, y: 0 })
+      return
+    }
+
+    const handleMove = (e: PointerEvent) => {
+      // Ignore touch and pen: only an actual mouse should attract the card.
+      if (e.pointerType !== 'mouse') return
       const el = ref.current
       if (!el) return
       const rect = el.getBoundingClientRect()
@@ -42,9 +61,9 @@ export default function Magnet({
         setOffset({ x: 0, y: 0 })
       }
     }
-    window.addEventListener('mousemove', handleMove, { passive: true })
-    return () => window.removeEventListener('mousemove', handleMove)
-  }, [padding, strength])
+    window.addEventListener('pointermove', handleMove, { passive: true })
+    return () => window.removeEventListener('pointermove', handleMove)
+  }, [padding, strength, pointerFine])
 
   return (
     <div ref={ref} className={className}>

@@ -77,7 +77,7 @@ function CertificateCard({
           </span>
         </div>
 
-        <span className="mt-2 inline-block px-1 text-xs font-light uppercase tracking-widest text-[#0C0C0C] opacity-0 transition-opacity duration-300 group-hover:opacity-60">
+        <span className="mt-2 inline-block px-1 text-xs font-light uppercase tracking-widest text-[#0C0C0C] opacity-50 transition-opacity duration-300 group-hover:opacity-90">
           {t.certificates.viewFull} ↗
         </span>
       </motion.a>
