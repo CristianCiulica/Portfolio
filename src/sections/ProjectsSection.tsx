@@ -76,7 +76,7 @@ function ProjectCard({
 
   return (
     <div
-      className="sticky flex h-[76vh] items-start justify-center top-[calc(1rem+var(--stack-i)*8px)] sm:h-[85vh] sm:top-[calc(5rem+var(--stack-i)*24px)] md:top-[calc(6rem+var(--stack-i)*28px)]"
+      className="sticky flex h-[76vh] items-start justify-center top-[calc(4.25rem+var(--stack-i)*10px)] sm:h-[85vh] sm:top-[calc(5.25rem+var(--stack-i)*24px)] md:top-[calc(6rem+var(--stack-i)*28px)]"
       style={{ '--stack-i': index } as React.CSSProperties}
     >
       <motion.div
