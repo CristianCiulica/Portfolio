@@ -12,7 +12,7 @@ export default function AboutSection() {
   return (
     <section
       id="despre"
-      className="relative flex min-h-screen flex-col items-center justify-center gap-10 px-5 py-20 sm:gap-14 sm:px-8 md:gap-16 md:px-10"
+      className="relative flex min-h-0 flex-col items-center justify-center gap-6 px-5 py-14 sm:min-h-screen sm:gap-14 sm:px-8 sm:py-20 md:gap-16 md:px-10"
     >
       <div className="absolute left-[1%] top-[4%] w-[70px] opacity-30 sm:left-[2%] sm:w-[160px] sm:opacity-100 md:left-[4%] md:w-[210px]">
         <FadeIn delay={0.1} x={-80} y={0} duration={0.9}>
