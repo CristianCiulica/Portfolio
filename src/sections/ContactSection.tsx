@@ -62,7 +62,7 @@ export default function ContactSection() {
   return (
     <footer
       id="contact"
-      className="flex flex-col items-center gap-12 px-5 pb-10 pt-24 sm:px-8 sm:pt-32 md:px-10"
+      className="flex flex-col items-center gap-7 px-5 pb-10 pt-16 sm:gap-12 sm:px-8 sm:pt-32 md:px-10"
     >
       <FadeIn y={40}>
         <h2
