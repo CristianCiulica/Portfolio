@@ -174,7 +174,7 @@ export default function OtherProjectsStream() {
       style={{ height: '300vh' }}
     >
       {/* Pinned Viewport Container */}
-      <div className="sticky top-0 flex h-[100svh] w-full flex-col justify-between overflow-hidden bg-[#0C0C0C] py-6 sm:py-8 md:py-12">
+      <div className="sticky top-0 flex h-[100svh] w-full flex-col justify-between overflow-hidden bg-[#0C0C0C] pt-[4.75rem] pb-5 sm:pt-20 sm:pb-8 md:pt-24 md:pb-12">
         {/* TOP HEADER */}
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 sm:px-8 md:px-10">
           <h3
