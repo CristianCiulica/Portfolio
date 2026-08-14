@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { ArrowUpRight } from 'lucide-react'
 import FadeIn from '../components/FadeIn'
 import { useLanguage } from '../i18n/LanguageContext'
 import type { Translation } from '../i18n/translations'
@@ -77,8 +78,9 @@ function CertificateCard({
           </span>
         </div>
 
-        <span className="mt-2 inline-block px-1 text-xs font-light uppercase tracking-widest text-[#0C0C0C] opacity-50 transition-opacity duration-300 group-hover:opacity-90">
-          {t.certificates.viewFull} ↗
+        <span className="mt-2 inline-flex items-center gap-1 px-1 text-xs font-light uppercase tracking-widest text-[#0C0C0C] opacity-50 transition-opacity duration-300 group-hover:opacity-90">
+          <span>{t.certificates.viewFull}</span>
+          <ArrowUpRight size={13} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </span>
       </motion.a>
     </div>
@@ -89,17 +91,17 @@ export default function CertificatesSection() {
   const { t } = useLanguage()
 
   return (
-    <section id="diplome" className="bg-white px-5 pb-24 pt-8 sm:px-8 sm:pb-32 md:px-10">
+    <section id="diplome" className="bg-white px-5 pb-14 pt-4 sm:px-8 sm:pb-32 sm:pt-8 md:px-10">
       <FadeIn y={40}>
         <h2
-          className="mb-14 text-center font-black uppercase leading-none tracking-tight text-[#0C0C0C] sm:mb-20"
+          className="mb-8 text-center font-black uppercase leading-none tracking-tight text-[#0C0C0C] sm:mb-20"
           style={{ fontSize: 'clamp(2.5rem, 10vw, 130px)' }}
         >
           {t.certificates.heading}
         </h2>
       </FadeIn>
 
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:gap-10 lg:grid-cols-3 lg:gap-8">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5 sm:gap-10 lg:grid-cols-3 lg:gap-8">
         {CERTIFICATES.map((cert, i) => (
           <CertificateCard key={cert.key} cert={cert} index={i} t={t} />
         ))}
