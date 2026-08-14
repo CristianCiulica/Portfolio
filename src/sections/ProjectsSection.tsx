@@ -76,18 +76,18 @@ function ProjectCard({
 
   return (
     <div
-      className="sticky flex h-[100svh] items-start justify-center top-[calc(1.25rem+var(--stack-i)*10px)] sm:h-[90vh] sm:top-[calc(3.5rem+var(--stack-i)*18px)]"
+      className="sticky flex h-[76vh] items-start justify-center top-[calc(1rem+var(--stack-i)*8px)] sm:h-[85vh] sm:top-[calc(5rem+var(--stack-i)*24px)] md:top-[calc(6rem+var(--stack-i)*28px)]"
       style={{ '--stack-i': index } as React.CSSProperties}
     >
       <motion.div
         style={{ scale, transformOrigin: 'top center' }}
-        className="w-full rounded-3xl border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:rounded-[44px] sm:p-6 md:rounded-[50px] md:p-7"
+        className="w-full rounded-3xl border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
       >
-        <div className="mb-4 flex flex-wrap items-center justify-between gap-4 sm:mb-5 md:mb-6">
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-4 sm:mb-6 md:mb-8">
           <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
             <span
               className="hero-heading font-black leading-none"
-              style={{ fontSize: 'clamp(2.2rem, 7vw, 96px)' }}
+              style={{ fontSize: 'clamp(2.2rem, 8vw, 110px)' }}
             >
               {project.number}
             </span>
@@ -97,7 +97,7 @@ function ProjectCard({
               </span>
               <span
                 className="font-medium uppercase text-[#D7E2EA]"
-                style={{ fontSize: 'clamp(1.2rem, 2.5vw, 2.2rem)' }}
+                style={{ fontSize: 'clamp(1.2rem, 3vw, 2.4rem)' }}
               >
                 {project.name}
               </span>
@@ -113,10 +113,10 @@ function ProjectCard({
         </div>
 
         <div
-          className="grid grid-cols-1 gap-3.5 lg:grid-cols-3 lg:items-start lg:gap-5"
+          className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-start lg:gap-6"
         >
-          <div className="flex flex-col gap-3.5 lg:gap-5 lg:col-span-2">
-            <div className="relative w-full overflow-hidden rounded-xl bg-[#F2F2F7] aspect-[16/9] max-h-[190px] lg:max-h-[220px]">
+          <div className="flex flex-col gap-4 lg:gap-6 lg:col-span-2">
+            <div className="relative w-full overflow-hidden rounded-xl bg-[#F2F2F7] aspect-[16/9]">
               <img
                 src={project.images[0]}
                 alt={`${project.name} — ${t.projects.captionAlt} 1`}
@@ -128,7 +128,7 @@ function ProjectCard({
               />
             </div>
             {project.images[2] && (
-              <div className="relative hidden w-full overflow-hidden rounded-xl bg-[#F2F2F7] aspect-[16/9] max-h-[190px] lg:max-h-[220px] sm:block">
+              <div className="relative hidden w-full overflow-hidden rounded-xl bg-[#F2F2F7] aspect-[16/9] sm:block">
                 <img
                   src={project.images[2]}
                   alt={`${project.name} — ${t.projects.captionAlt} 3`}
@@ -141,7 +141,7 @@ function ProjectCard({
               </div>
             )}
           </div>
-          <div className="relative mx-auto w-[42%] overflow-hidden rounded-2xl bg-[#F2F2F7] aspect-[9/19] max-h-[400px] lg:max-h-[460px] sm:w-1/2 sm:rounded-xl lg:w-full lg:col-span-1">
+          <div className="relative mx-auto w-[42%] overflow-hidden rounded-2xl bg-[#F2F2F7] aspect-[9/19] sm:w-1/2 sm:rounded-xl lg:w-full lg:col-span-1">
             <img
               src={project.images[1]}
               alt={`${project.name} — ${t.projects.captionAlt} 2`}
@@ -169,11 +169,11 @@ export default function ProjectsSection() {
   return (
     <section
       id="proiecte"
-      className="relative z-10 -mt-10 rounded-t-[40px] bg-[#0C0C0C] px-5 pb-16 pt-20 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 sm:pb-20 md:-mt-14 md:rounded-t-[60px] md:px-10 md:pt-28"
+      className="relative z-10 -mt-10 rounded-t-[40px] bg-[#0C0C0C] px-5 pb-10 pt-16 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 sm:pb-20 sm:pt-20 md:-mt-14 md:rounded-t-[60px] md:px-10 md:pt-28"
     >
       <FadeIn y={40}>
         <h2
-          className="hero-heading mb-10 text-center font-black uppercase leading-none tracking-tight sm:mb-14 md:mb-20"
+          className="hero-heading mb-8 text-center font-black uppercase leading-none tracking-tight sm:mb-14 md:mb-20"
           style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
         >
           {t.projects.heading}
@@ -194,7 +194,7 @@ export default function ProjectsSection() {
       </div>
 
       {/* HORIZONTAL STREAM: ALTE PROIECTE */}
-      <div className="-mx-5 mt-20 sm:-mx-8 sm:mt-48 md:-mx-10 md:mt-[380px]">
+      <div className="-mx-5 mt-4 sm:-mx-8 sm:mt-48 md:-mx-10 md:mt-[380px]">
         <OtherProjectsStream />
       </div>
     </section>
