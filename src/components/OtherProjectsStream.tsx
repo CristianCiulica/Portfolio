@@ -6,6 +6,7 @@ import {
   useSpring,
   useMotionValueEvent,
 } from 'framer-motion'
+import { ArrowDownRight } from 'lucide-react'
 import LiveProjectButton from './LiveProjectButton'
 import { useLanguage } from '../i18n/LanguageContext'
 import type { Translation } from '../i18n/translations'
@@ -87,9 +88,9 @@ function StreamCard({
         </h4>
       </div>
 
-      {/* Footer: Tech Stack & GitHub Live Button */}
-      <div className="flex flex-col gap-3 border-t border-[#D7E2EA]/15 pt-3.5 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
-        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+      {/* Footer: Tech Stack & Centered GitHub Button */}
+      <div className="flex flex-col items-center gap-3 border-t border-[#D7E2EA]/15 pt-3.5 sm:gap-4 sm:pt-4">
+        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
           {stackItems.map((tech) => (
             <span
               key={tech}
@@ -100,7 +101,7 @@ function StreamCard({
           ))}
         </div>
 
-        <div className="shrink-0">
+        <div className="flex w-full items-center justify-center">
           <LiveProjectButton href={project.href} label={t.projects.viewOnGithub} />
         </div>
       </div>
@@ -221,7 +222,10 @@ export default function OtherProjectsStream() {
 
         {/* BOTTOM PAGINATION DOTS */}
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 text-xs font-light uppercase tracking-widest text-[#D7E2EA] opacity-40 sm:px-8 md:px-10">
-          <span className="text-[11px] sm:text-xs">Scroll ↘</span>
+          <span className="inline-flex items-center gap-1 text-[11px] sm:text-xs">
+            <span>Scroll</span>
+            <ArrowDownRight size={13} />
+          </span>
           <div className="flex items-center gap-2">
             {OTHER_PROJECTS.map((_, i) => (
               <span
