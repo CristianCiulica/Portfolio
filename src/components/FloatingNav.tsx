@@ -42,7 +42,7 @@ export default function FloatingNav() {
           animate={{ y: 0, opacity: 1, x: '-50%' }}
           exit={{ y: -60, opacity: 0, x: '-50%' }}
           transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed top-4 left-1/2 z-40 flex items-center gap-2 rounded-full border border-white/15 bg-[#121214]/85 px-3 py-2 shadow-[0_12px_36px_rgba(0,0,0,0.7)] backdrop-blur-xl sm:gap-3 sm:px-5 sm:py-2.5"
+          className="fixed top-3 left-1/2 z-40 flex items-center gap-2 rounded-full border border-white/15 bg-[#121214]/85 px-3 py-1.5 shadow-[0_12px_36px_rgba(0,0,0,0.7)] backdrop-blur-xl sm:top-4 sm:gap-3 sm:px-5 sm:py-2.5"
         >
           {/* Scroll to Top Logo/Button */}
           <button
