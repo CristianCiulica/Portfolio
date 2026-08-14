@@ -92,7 +92,7 @@ export const translations = {
           stack: 'Modern C++ · Game AI · Euristici',
         },
         regex: {
-          name: 'Regex → DFA Converter',
+          name: 'Regex to DFA Converter',
           role: 'Teoria automatelor',
           stack: 'C++ · Automate Finite',
         },
@@ -207,7 +207,7 @@ export const translations = {
           stack: 'Modern C++ · Game AI · Heuristics',
         },
         regex: {
-          name: 'Regex → DFA Converter',
+          name: 'Regex to DFA Converter',
           role: 'Automata Theory',
           stack: 'C++ · Finite Automata',
         },
