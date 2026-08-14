@@ -19,6 +19,12 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (pointer: fine) {
+  body, a, button, [role="button"], input, textarea, select {
+    cursor: none !important;
+  }
+}
+
 @keyframes float-soft {
   0%,
   100% {

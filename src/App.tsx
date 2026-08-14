@@ -6,11 +6,13 @@ import CertificatesSection from './sections/CertificatesSection'
 import ProjectsSection from './sections/ProjectsSection'
 import ContactSection from './sections/ContactSection'
 import FloatingNav from './components/FloatingNav'
+import CustomCursor from './components/CustomCursor'
 import LanguageProvider from './i18n/LanguageProvider'
 
 function App() {
   return (
     <LanguageProvider>
+      <CustomCursor />
       <FloatingNav />
       <main className="bg-[#0C0C0C] font-kanit" style={{ overflowX: 'clip' }}>
         <HeroSection />
