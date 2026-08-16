@@ -22,7 +22,6 @@ The website presents selected projects, technical skills, certifications, downlo
 | FitTrack | Workout and running tracking application | Angular, TypeScript, Firebase |
 | SkinAlert | AI-assisted skin-image screening | Python, TensorFlow, CNN |
 | BacPro | Learning and exam-preparation platform | Angular, TypeScript, Firebase |
-
 The portfolio also links to OctaCare, a Crypto Market Aggregator, a 7 Wonders Duel AI project, and a Regex-to-DFA converter.
 
 ## Tech stack
