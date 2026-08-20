@@ -18,6 +18,7 @@ The website presents selected projects, technical skills, certifications, downlo
 
 ## Featured projects
 
+
 | Project | Focus | Technologies |
 | --- | --- | --- |
 | FitTrack | Workout and running tracking application | Angular, TypeScript, Firebase |
