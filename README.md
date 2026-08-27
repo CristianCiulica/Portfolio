@@ -86,7 +86,7 @@ public/
 ## Customization
 - Update portfolio copy and supported languages in `src/i18n/translations.ts`.
 - Replace project details and external URLs in `src/sections/ProjectsSection.tsx`.
-- Add or replace screenshots in `public/projects/`.
+- Add or replace screenshots in `public/projects/`
 - Update the CV file at `public/CV_Cristian_Ciulica.pdf`.
 - Change contact and social URLs in `src/sections/ContactSection.tsx` and `src/components/ContactButton.tsx`.
 
