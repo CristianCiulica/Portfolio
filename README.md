@@ -84,6 +84,7 @@ public/
 └── CV_Cristian_Ciulica.pdf
 ```
 
+
 ## Customization
 - Update portfolio copy and supported languages in `src/i18n/translations.ts`.
 - Replace project details and external URLs in `src/sections/ProjectsSection.tsx`.
