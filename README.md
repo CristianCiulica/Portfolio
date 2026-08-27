@@ -41,7 +41,6 @@ The portfolio also links to OctaCare, a Crypto Market Aggregator, a 7 Wonders Du
 - Node.js 20 or newer
 - npm
 
-
 ### Installation
 
 ```bash
