@@ -85,7 +85,6 @@ public/
 ```
 
 ## Customization
-
 - Update portfolio copy and supported languages in `src/i18n/translations.ts`.
 - Replace project details and external URLs in `src/sections/ProjectsSection.tsx`.
 - Add or replace screenshots in `public/projects/`.
