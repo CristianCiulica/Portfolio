@@ -1,6 +1,6 @@
 # Cristian Ciulică — Portfolio
 
-A responsive, bilingual personal portfolio website built to showcase my work in full-stack web development, AI, and UI/UX design
+A responsive, bilingual personal portfolio website built to showcase my work in full-stack web development, AI, and UI/UX design.
 
 
 The website presents selected projects, technical skills, certifications, downloadable CV, and contact links in a visual, motion-driven experience.
