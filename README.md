@@ -29,7 +29,7 @@ The portfolio also links to OctaCare, a Crypto Market Aggregator, a 7 Wonders Du
 ## Tech stack
 
 - React 19 and TypeScript
-- Vite
+- Vite 
 - Tailwind CSS
 - Framer Motion
 - Lucide React icons
