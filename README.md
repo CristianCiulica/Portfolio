@@ -67,6 +67,7 @@ Vite will print the local URL in the terminal, usually `http://localhost:5173`.
 | `npm run preview` | Serves the production build locally. |
 | `npm run lint` | Runs OXLint. |
 
+
 ## Project structure
 
 ```text
