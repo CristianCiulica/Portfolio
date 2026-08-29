@@ -7,6 +7,7 @@ The website presents selected projects, technical skills, certifications, downlo
 
 
 
+
 - Romanian and English interface with an instant language switcher
 - Responsive layout for mobile, tablet, and desktop
 - Animated hero section with a magnetic terminal card and floating technology labels
