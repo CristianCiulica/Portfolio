@@ -91,5 +91,6 @@ public/
 - Update the CV file at `public/CV_Cristian_Ciulica.pdf`.
 - Change contact and social URLs in `src/sections/ContactSection.tsx` and `src/components/ContactButton.tsx`.
 
+
 ## Contact
 Cristian Ciulică — [GitHub](https://github.com/CristianCiulica) · [LinkedIn](https://www.linkedin.com/in/cristian-ciulic%C4%83-66299038a) · [Email](mailto:cristianciulica2024@gmail.com)
